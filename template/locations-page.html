@@ -4,67 +4,134 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shelf Space</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>BackStock: Locations</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./locations-page-style.css" />
   </head>
   <body>
-    <!-- navbar -->
-    <nav class="navbar bg-light">
+    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Inventory Services
-          <img src="data:image/png;base64,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"" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
-         
-          <div class="navbar-nav">
-            <a class="nav-link" href="#">Home</a>
-            <a class="nav-link" href="#">Logout</a>
-          </div>
-        </a>
+        <a class="navbar-brand" href="#">BackStock</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <!-- items in location -->
-    <ul class="list-group  ">
-      <li class="list-group-item d-flex justify-content-center">
-        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-        <label class="form-check-label" for="firstCheckbox">First checkbox</label>
-      </li>
-      <li class="list-group-item d-flex justify-content-center">
-        <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-        <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
-      </li>
-      <li class="list-group-item d-flex justify-content-center">
-        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-        <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
-      </li>
-    </ul>
-
-    <!-- Go back a page button -->
-    <a class="btn btn-primary" href="#" role="button">Back</a>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Add item
-</button>
-
-<!-- Modal add items -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Backstock item:</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="">
+      <div class="container">
+        <div class="row row-cols-auto">
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col flex-column" style="width: 20rem">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Location</h5>
+                <a href="#" class="btn btn-primary">Navigate Here</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Yes</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Insert scripts  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </section>
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
