@@ -1,0 +1,34 @@
+:root {
+    --coffee: #524433;
+    --mocha: #736A5A;
+    --iced: #8C8270;
+    --latte: #A3907A;
+}
+
+body {
+    background-color: var(--mocha);
+    color: var(--coffee);
+}
+
+header {
+    background-color: var(--latte);
+    border-bottom: solid var(--coffee) 3px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.btn-primary{
+    background-color: var(--latte) !important;
+    color: var(--coffee) !important;
+    border: solid var(--coffee) 3px !important;
+}
+
+.custom-bg {
+    background-color: var(--iced);
+}
+
+.custom-text {
+    color: var(--coffee);
+}
