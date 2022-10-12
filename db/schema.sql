@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS backstock_db;
+CREATE DATABASE backstock_db;
