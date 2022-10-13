@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./login-page.css">
+    
+</head>
+<body>
+    <nav id="loginNav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Home</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+   <main>
+    <form class="align-items-center" id = "loginForm">
+        <div class="container">
+            <Header class="text-center">Login</Header>
+            <label>Username</label>
+            <input class="form-control" name = "memberId" type = "text" autofocus>
+            <label>Password</label>
+            <input class="form-control" name = "password" type = "password">
+            <button type = "submit" form="loginForm">Login</button>
+        </div>
+        <div class="container">
+            <p>Need an Account? Register below.</p>
+            <button type ="submit" form="registerForm">Register</button>
+        </div>
+    </form>
+   </main>
+</body>
+</html>
