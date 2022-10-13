@@ -7,11 +7,16 @@ class Locations extends Model {
 }
 Locations.init(
     {
-    id: {
+    //each  location needs an id for seperate shelfs 
+    locationid: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
     }
     
 })
