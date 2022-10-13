@@ -19,10 +19,18 @@ h1 {
     font-size: 60px;
 }
 
+.btn-custom {
+    width: 25%;
+}
+
 .btn-primary{
     background-color: var(--latte) !important;
     color: var(--coffee) !important;
     border: solid var(--coffee) 3px !important;
+}
+
+.centered {
+    padding: 100px 0;
 }
 
 .custom-bg {
@@ -31,4 +39,12 @@ h1 {
 
 .custom-text {
     color: var(--coffee);
+}
+
+.custom-box {
+    height: 75%;
+    width: 75%;
+    background-color: var(--iced);
+    border: double var(--coffee) 5px;
+    border-radius: 0.375rem;
 }
