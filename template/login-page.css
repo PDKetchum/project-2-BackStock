@@ -1,0 +1,28 @@
+#loginNav {
+    background-color: #bea17e;
+}
+
+body {
+    background-color: #7c6851;
+}
+
+main {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 350px;
+    height: 350px;
+    background-color: #bea17e;
+    justify-content: center;
+}
+
+button {
+    background-color: #6e5b44;
+    color: white;
+}
+
+header {
+    font-weight: bold;
+    font-size: 40px;
+}
