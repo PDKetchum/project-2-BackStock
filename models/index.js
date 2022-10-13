@@ -6,7 +6,7 @@ const shelf=require('./shelf');
 
 //adding relations to bring all tables to one
 
-shelf.hasmany(products, {
+shelf.hasMany(products, {
     foreignKey: 'productid',
     onDelete: 'CASCADE',
 })
