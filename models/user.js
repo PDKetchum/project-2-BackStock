@@ -12,16 +12,19 @@ class User extends Model {
 
   User.init(
     {
-      id: {
+      // user need a unique id 
+      userid: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
       },
+      // user needs a name 
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      //user needs a email for login purposes
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -30,6 +33,7 @@ class User extends Model {
           isEmail: true,
         },
       },
+      // user needs a password for login purposes
       password: {
         type: DataTypes.STRING,
         allowNull: false,
