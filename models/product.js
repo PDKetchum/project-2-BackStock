@@ -9,7 +9,7 @@ class Products extends Model {
 Products.init(
     {
         // product needs unique id 
-        productid: {
+        Productid: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
