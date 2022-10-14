@@ -1,11 +1,11 @@
-var login = document.querySelector('#login');
+var btn = document.querySelector('#btn');
 
-login.addEventListener("mouseover", (event) => {
+btn.addEventListener("mouseover", (event) => {
     function delay(time) {
-        login.classList.add('animate__animated', 'animate__pulse');
+        btn.classList.add('animate__animated', 'animate__pulse');
         return new Promise(resolve => setTimeout(resolve, time));
 
     }
-    delay(1000).then(() => login.classList.remove('animate__animated', 'animate__pulse'));
+    delay(1000).then(() => btn.classList.remove('animate__animated', 'animate__pulse'));
 
 });
