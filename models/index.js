@@ -6,17 +6,17 @@ const Shelf = require("./shelf");
 
 //adding relations to bring all tables to one
 
-shelf.hasMany(Product, {
+Shelf.hasMany(Product, {
   foreignKey: "id",
   onDelete: "CASCADE",
 });
 
-shelf.hasMany(Location, {
+Shelf.hasMany(Location, {
   foreignKey: "id",
   onDelete: "CASCADE",
 });
 
-shelf.hasMany(User, {
+Shelf.hasMany(User, {
   foreignKey: "id",
   onDelete: "CASCADE",
 });
