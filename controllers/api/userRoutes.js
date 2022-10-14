@@ -1,6 +1,16 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+router.get("/", async (req, res) => {
+  // find all Users
+  try {
+    const userData = await User.findAll({});
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post("/login", async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
