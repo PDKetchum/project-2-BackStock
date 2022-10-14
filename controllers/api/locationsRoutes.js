@@ -16,9 +16,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   // find one Location by its `id` value
   try {
-    const locationData = await Location.findByPk(req.params.id, {
-      // include: [{ model: Product }],
-    });
+    const locationData = await Location.findByPk(req.params.id, {});
 
     if (!locationData) {
       res.status(404).json({ message: "No location with this id!" });
