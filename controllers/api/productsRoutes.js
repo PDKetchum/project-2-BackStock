@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Product, Category, Tag, ProductTag } = require("../../models");
+const { Product } = require("../../models");
 
 // The `/api/products` endpoint
 
@@ -7,10 +7,10 @@ const { Product, Category, Tag, ProductTag } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const productData = await Product.findAll({
-      include: [
-        // { model: Employee, through: ProductLocation },
-        // { model: Location },
-      ],
+      // include: [
+      //   // { model: Employee, through: ProductLocation },
+      //   // { model: Location },
+      // ],
     });
     res.status(200).json(productData);
   } catch (err) {
@@ -22,10 +22,10 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
-      include: [
-        // { model: Employee, through: ProductLocation },
-        // { model: Location },
-      ],
+      // include: [
+      //   // { model: Employee, through: ProductLocation },
+      //   // { model: Location },
+      // ],
     });
 
     if (!productData) {
