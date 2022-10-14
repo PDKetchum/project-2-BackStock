@@ -26,7 +26,13 @@ Products.init(
             type: DataTypes.INTEGER,
 
         }
-    }
-)
+    }, 
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Products'
+      }
+);
 
 module.exports = Products; 

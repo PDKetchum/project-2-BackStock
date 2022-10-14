@@ -4,6 +4,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+
 // create shelf table 
 class shelf extends Model {
 
@@ -13,16 +14,16 @@ ProductID: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-        model: "Product", 
-        key: 'id'
+        model: "Products", 
+        key: 'ProductName'
     }
 },
 Stocked_By: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false, 
     references: {
-        model: "User", 
-        key: 'id'
+        model: "user", 
+        key: 'name'
     }
 
 },
@@ -33,7 +34,24 @@ LocationID: {
         model: "Locations", 
         key: 'id'
     }
-}
+}, 
+Amount: {
+    type: DataTypes.INTEGER,
+    references: {
+        model: "Product",
+        key: "Quantity"
+    }
+}, 
 
-})
-Model.exports =shelf; 
+},
+{
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'shelf'
+    }
+    
+
+)
+module.exports =shelf; 
