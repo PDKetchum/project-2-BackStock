@@ -13,7 +13,7 @@ class User extends Model {
   User.init(
     {
       // user need a unique id 
-      userid: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -53,7 +53,7 @@ class User extends Model {
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'User',
       }
     );
     

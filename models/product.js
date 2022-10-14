@@ -9,7 +9,7 @@ class Products extends Model {
 Products.init(
     {
         // product needs unique id 
-        productid: {
+        Productid: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -26,7 +26,13 @@ Products.init(
             type: DataTypes.INTEGER,
 
         }
-    }
-)
+    }, 
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Products'
+      }
+);
 
 module.exports = Products; 

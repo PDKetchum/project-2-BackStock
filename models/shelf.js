@@ -11,8 +11,8 @@ Shelf.init({
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: "Product",
-      key: "id",
+      model: "Products",
+      key: "Productid",
     },
   },
   Stocked_By: {
@@ -28,8 +28,15 @@ Shelf.init({
     allowNull: false,
     references: {
       model: "Locations",
-      key: "id",
+      key: "locationid",
     },
   },
-});
-Model.exports = Shelf;
+}, 
+{
+  sequelize,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'Shelf'
+}
+);
+module.exports = Shelf;
