@@ -1,25 +1,16 @@
 const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
-class Product extends Model {}
-
-Product.init(
+class Location extends Model {}
+Location.init(
   {
-    // product needs unique id
+    //each  location needs an id for seperate shelfs
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    //product needs a name
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    //product needs a quantity amount
-    quantity: {
-      type: DataTypes.INTEGER,
     },
   },
   {
@@ -27,8 +18,7 @@ Product.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Product",
+    modelName: "Location",
   }
 );
-
-module.exports = Product;
+module.exports = Location;
