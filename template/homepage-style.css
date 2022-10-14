@@ -10,9 +10,9 @@ body {
     color: var(--coffee);
 }
 
-header {
-    background-color: var(--latte);
-    border-bottom: solid var(--coffee) 3px;
+.navbar {
+    background-color: var(--latte) !important;
+    border-bottom: solid var(--coffee) 3px !important;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
     width: 25%;
 }
 
-.btn-primary{
+a{
     background-color: var(--latte) !important;
     color: var(--coffee) !important;
     border: solid var(--coffee) 3px !important;
