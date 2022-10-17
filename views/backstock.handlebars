@@ -19,11 +19,11 @@
         </div>
     </div>
 </div>
+
 <!-- Left side of container AKA button side -->
 <div class="container text-center left">
     <div class="row">
-        <div class="col ">
-
+        <div class="col">
             <!-- Button trigger modal -->
             <div class="row sticky">
                 <h1>Backstock Location: A</h1>
@@ -50,10 +50,10 @@
         <div class="col overflow-auto right">
             <ul class="list-group">
                 {{!-- Need to add <li> for every item added --}}
-                <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    <span class="badge  rounded-pill"></span>
-                </li>
+                {{#each as || }}
+                {{> backstock-details}}
+                {{/each}}
             </ul>
         </div>
 
-        <script src="./BackstockLocation.js"></script>
+        <script src="/template/BackstockLocation.js"></script>

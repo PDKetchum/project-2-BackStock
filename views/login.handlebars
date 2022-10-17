@@ -1,0 +1,35 @@
+<main class="container d-flex flex-wrap justify-content-center centered-form">
+    <!-- Login form -->
+    <form class="m-4 px-3 py-5" id="loginForm">
+        <div class="container">
+            <h1 class="text-center pb-2">Login</h1>
+            <label>Username</label>
+            <input class="form-control mb-2" name="memberId" type="text" autofocus>
+            <label>Password</label>
+            <input class="form-control mb-2" name="password" type="password">
+            <div class="text-center">
+                {{!-- Send user to homepage when logged in--}}
+                <a href="/" id="login" class="btn btn-primary mt-3" role="button">Log In</a>
+            </div>
+        </div>
+    </form>
+
+    <!-- Sign up form -->
+    <form class="m-4 px-3 py-5" id="loginForm">
+        <div class="container">
+            <h1 class="text-center pb-2">Sign Up</h1>
+            <label>Username</label>
+            <input class="form-control mb-2" name="memberId" type="text" autofocus>
+            <label>Password</label>
+            <input class="form-control mb-2" name="password" type="password">
+            <div class="text-center">
+                {{!-- Needs to create user when clicked --}}
+                <button id="signup" class="btn btn-primary mt-3" type="submit" form="registerForm">Sign Up</button>
+            </div>
+        </div>
+    </form>
+
+</main>
+
+<script src="/public/js/login-page.js"></script>
+<script src="/public/js/login.js"></script>
