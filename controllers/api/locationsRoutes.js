@@ -1,14 +1,12 @@
 const router = require("express").Router();
-const { Locations, Product } = require("../../models");
+const { Location } = require("../../models");
 
 // The `/api/locations` endpoint
 
 router.get("/", async (req, res) => {
   // find all Locations
   try {
-    const locationData = await Location.findAll({
-      include: [{ model: Product }],
-    });
+    const locationData = await Location.findAll({});
     res.status(200).json(locationData);
   } catch (err) {
     res.status(400).json(err);
@@ -18,9 +16,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   // find one Location by its `id` value
   try {
-    const locationData = await Location.findByPk(req.params.id, {
-      include: [{ model: Product }],
-    });
+    const locationData = await Location.findByPk(req.params.id, {});
 
     if (!locationData) {
       res.status(404).json({ message: "No location with this id!" });

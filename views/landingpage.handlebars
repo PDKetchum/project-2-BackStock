@@ -1,0 +1,20 @@
+<main class="centered d-flex align-items-center justify-content-center">
+    <div class="custom-box text-center p-3 position-relative">
+        <div class="position-absolute top-50 start-50 translate-middle animate__animated animate__fadeInUp">
+            <h1 id="title">BackStock</h1>
+            <img src="/images/boxes-small.png">
+            <br>
+
+            {{#if logged_in}}
+            {{!-- If logged in button redirets to homepage --}}
+            <a href="/" id="btn" class="btn btn-primary btn-custom" role="button">Begin</a>
+
+            {{else}}
+            {{!-- If not logged in button redirets to login page --}}
+            <a href="/login" id="login" class="btn btn-primary btn-custom" role="button">Log In</a>
+            {{/if}}
+        </div>
+
+</main>
+
+<script src="/javascript/landingpage.js"></script>

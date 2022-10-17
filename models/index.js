@@ -1,24 +1,24 @@
-// bring in all tables 
-const users = require('./user'); 
-const products =require('./product');
-const Locations =require('./backroomLocatations');
-const shelf=require('./shelf');
+// bring in all tables
+const User = require("./user");
+const Product = require("./product");
+const Location = require("./location");
+const Shelf = require("./shelf");
 
 //adding relations to bring all tables to one
 
-shelf.hasMany(products, {
-    foreignKey: 'productid',
-    onDelete: 'CASCADE',
-})
+Shelf.hasMany(Product, {
+  foreignKey: "id",
+  onDelete: "CASCADE",
+});
 
-shelf.hasmany(Locations, {
-    foreignKey: 'locationid',
-    onDelete: 'CASCADE',
-})
+Shelf.hasMany(Location, {
+  foreignKey: "id",
+  onDelete: "CASCADE",
+});
 
-shelf.hasmany(users, {
-    foreignKey: 'userid',
-    onDelete: 'CASCADE',
-})
+Shelf.hasMany(User, {
+  foreignKey: "id",
+  onDelete: "CASCADE",
+});
 
-module.exports = {shelf};
+module.exports = { Shelf, User, Product, Location };
