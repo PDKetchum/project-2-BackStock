@@ -1,8 +1,17 @@
 <section class="centered-form">
   <div class="container">
     <div class="row row-cols-auto">
-      {{#each locations as |location|}}
-      {{> location-details}}
+      {{#each locations as |location| }}
+       <div class="col flex-column" style="width: 20rem">
+          <div class="card text-center customCard animate__animated animate__slideInLeft">
+            <div class="card-body">
+                 {{!-- {{> location-details}} --}}
+              <h5 class="card-title"> Location {{location.id}}</h5>
+              <a href="./BackstockLocation.html" id="navigate" class="btn btn-primary">Navigate Here</a>
+            </div>
+          </div>
+        </div>
+    
       {{/each}}
     </div>
     {{!-- Add new product to table  --}}
