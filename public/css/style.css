@@ -11,20 +11,39 @@ body {
     color: var(--coffee);
 }
 
-#title {
-    font-size: 60px;
-}
-
 button {
     background-color: var(--latte) !important;
     border-color: var(--coffee) !important;
     border-width: 3px !important;
+    color: var(--coffee) !important;
 }
 
 a {
     background-color: var(--latte) !important;
     border-color: var(--coffee) !important;
     border-width: 3px !important;
+    color: var(--coffee) !important;
+}
+
+form {
+    background-color: var(--cream);
+    border: double var(--coffee) 5px;
+    border-radius: 0.375rem;
+    width: 425px;
+}
+
+h1 {
+    color: var(--coffee) !important;
+}
+
+#img {
+    margin: auto;
+    width: 100px !important;
+    height: 100px !important;
+}
+
+#title {
+    font-size: 60px;
 }
 
 .badge {
@@ -36,6 +55,10 @@ a {
 }
 
 .centered {
+    padding: 50px 0;
+}
+
+.centered-form {
     padding: 100px 0;
 }
 
@@ -44,7 +67,7 @@ a {
 }
 
 .custom-box {
-    height: 75%;
+    height: 600px;
     width: 75%;
     background-color: var(--iced);
     border: double var(--coffee) 5px;
@@ -101,11 +124,6 @@ a {
     margin: 200px;
 }
 
-#img {
-    margin: auto;
-    width: 100px !important;
-    height: 100px !important;
-}
 
 @media only screen and (max-width: 768px) {
     .sticky {

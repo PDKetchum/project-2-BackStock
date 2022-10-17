@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Product } = require("../../models");
+const { Product, User, Location, Shelf } = require("../../models");
 
 // The `/api/products` endpoint
 
@@ -8,12 +8,13 @@ router.get("/", async (req, res) => {
   try {
     const productData = await Product.findAll({
       // include: [
-      //   // { model: Employee, through: ProductLocation },
-      //   // { model: Location },
+      //   { model: User, through: Shelf, attributes: ["name"] },
+      //   { model: Location, through: Shelf, attributes: ["id"] },
       // ],
     });
     res.status(200).json(productData);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -22,10 +23,10 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
-      // include: [
-      //   // { model: Employee, through: ProductLocation },
-      //   // { model: Location },
-      // ],
+      include: [
+        { model: User, through: Shelf, attributes: ["name"] },
+        { model: Location, through: Shelf, attributes: ["id"] },
+      ],
     });
 
     if (!productData) {
@@ -52,14 +53,13 @@ router.post("/", async (req, res) => {
 // update product by id
 router.put("/:id", async (req, res) => {
   try {
-    const productData = await Product.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (!productData[0]) {
-      res.status(404).json({ message: "No product with this id!" });
-      return;
+    let productData = await Product.findByPk(req.params.id);
+
+    if (productData) {
+      productData.quantity += req.body.quantity;
+      productData = await Product.update(productData);
+    } else {
+      productData = await Product.create(req.body);
     }
     res.status(200).json(productData);
   } catch (err) {

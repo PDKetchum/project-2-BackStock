@@ -6,37 +6,39 @@ const sequelize = require("../config/connection");
 
 // create shelf table
 class Shelf extends Model {}
-Shelf.init({
-  ProductID: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: "Products",
-      key: "Productid",
+Shelf.init(
+  {
+    product_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "Product",
+        key: "id",
+      },
+    },
+    user_name: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "User",
+        key: "id",
+      },
+    },
+    location_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "Location",
+        key: "id",
+      },
     },
   },
-  Stocked_By: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: "User",
-      key: "id",
-    },
-  },
-  LocationID: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: "Locations",
-      key: "locationid",
-    },
-  },
-}, 
-{
-  sequelize,
-  freezeTableName: true,
-  underscored: true,
-  modelName: 'Shelf'
-}
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "Shelf",
+  }
 );
 module.exports = Shelf;
