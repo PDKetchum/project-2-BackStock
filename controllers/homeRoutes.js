@@ -1,3 +1,5 @@
+const { Location } = require("../models");
+
 const router = require("express").Router();
 
 router.get('/', (req, res) => {
@@ -11,8 +13,9 @@ router.get('/login', (req, res) => {
     //   }
     res.render('login');
 });
-router.get('/locations', (req, res) => {
-   res.render('locations')
+router.get('/locations', async (req, res) => {
+    const locationData= await Location.findAll({raw: true})
+   res.render('locations', {locations: locationData})
 });
 router.get('/backstock', (req, res) => {
     res.render('backstock')
