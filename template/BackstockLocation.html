@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backstock Locations</title>
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-  />
-   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backstock Locations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="../public/css/style.css" />
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <h1 class="navbar-brand animate__animated animate__flip ">BackStock</h1>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <h1 class="navbar-brand animate__animated animate__flip ">BackStock</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./homepage.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./landingpage.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-  
+
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -55,140 +45,146 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body mx-auto">
-            <input type="text" id="ProductName"  placeholder="Product Name"><br><br>
-            <input type="number" id="Amount" value="1"><br><br>
+          <input type="text" id="ProductName" placeholder="Product Name"><br><br>
+          <input type="number" id="Amount" value="1"><br><br>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-primary">Add</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
-          
+
         </div>
       </div>
     </div>
   </div>
- <!-- Left side of container AKA button side -->
+
+  <!-- Left side of container AKA button side -->
   <div class="container text-center left">
     <div class="row">
-      <div class="col ">
-        
+      <div class="col">
+
         <!-- Button trigger modal -->
         <div class="row sticky">
           <h1>Backstock Location: A</h1>
           <img id="img" src="./images/icons8-delivery-64.png">
-        <button type="button" class="btn btn-primary space" id="Additems" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-     Add Item <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
-        <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-      </svg>
-   </button>
-        <!-- Button to go back a page -->
-      <a class="btn btn-primary space" id="back" href="./locations-page.html" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-      </svg> Back</a>
+          <button type="button" class="btn btn-primary space" id="Additems" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            Add Item <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-box" viewBox="0 0 16 16">
+              <path
+                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+            </svg>
+          </button>
+          <!-- Button to go back a page -->
+          <a class="btn btn-primary space" id="back" href="./locations-page.html" role="button"><svg
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg> Back</a>
         </div>
       </div>
       <!-- Right side of container AKA List side -->
       <div class="col overflow-auto right">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-              Apples
-              <span class="badge  rounded-pill">23</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-              Book
-              <span class="badge bg-primary rounded-pill">1</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-              Video Game
-              <span class="badge bg-primary rounded-pill">99</span>
-            </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge  rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
 
 
 
 
-                <!-- stress test page to flex with additional items delete when not in use  -->
+          <!-- stress test page to flex with additional items delete when not in use  -->
 
-                <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Apples
-                    <span class="badge bg-primary rounded-pill">23</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Book
-                    <span class="badge bg-primary rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Video Game
-                    <span class="badge bg-primary rounded-pill">99</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Apples
-                    <span class="badge bg-primary rounded-pill">23</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Book
-                    <span class="badge bg-primary rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Video Game
-                    <span class="badge bg-primary rounded-pill">99</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Apples
-                    <span class="badge bg-primary rounded-pill">23</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Book
-                    <span class="badge bg-primary rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Video Game
-                    <span class="badge bg-primary rounded-pill">99</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Apples
-                    <span class="badge bg-primary rounded-pill">23</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Book
-                    <span class="badge bg-primary rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Video Game
-                    <span class="badge bg-primary rounded-pill">99</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Apples
-                    <span class="badge bg-primary rounded-pill">23</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Book
-                    <span class="badge bg-primary rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Video Game
-                    <span class="badge bg-primary rounded-pill">99</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Apples
-                    <span class="badge bg-primary rounded-pill">23</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Book
-                    <span class="badge bg-primary rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
-                    Video Game
-                    <span class="badge bg-primary rounded-pill">99</span>
-                  </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge bg-primary rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge bg-primary rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge bg-primary rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge bg-primary rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge bg-primary rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Apples
+            <span class="badge bg-primary rounded-pill">23</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Book
+            <span class="badge bg-primary rounded-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center list-bg">
+            Video Game
+            <span class="badge bg-primary rounded-pill">99</span>
+          </li>
 
-
-
-          </ul>
+        </ul>
       </div>
 
 
-    
+
       <!-- Added scripts -->
-      <script src="./BackstockLocation.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+      <script src="../public/js/BackstockLocation.js"></script>
+      <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
