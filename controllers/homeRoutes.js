@@ -1,27 +1,29 @@
 const sequelize = require("../config/connection");
 const { Location, Product, User, Shelf } = require("../models");
+const withAuth = require("../utils/auth");
 
 const router = require("express").Router();
 
-router.get('/', (req, res) => {
-    res.render('landingpage');
+router.get("/", (req, res) => {
+  res.render("landingpage");
 });
 
 router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
     if (req.session.loggedIn) {
         res.redirect('/homepage');
         return;
     }
     res.render('login');
 });
-router.get('/locations', async (req, res) => {
+router.get('/locations', withAuth, async (req, res) => {
     const locationData = await Location.findAll({ raw: true })
     res.render('locations', { locations: locationData })
 });
-router.get('/backstock', (req, res) => {
+router.get('/backstock', withAuth, (req, res) => {
     res.render('backstock')
 });
-router.get('/homepage', (req, res) => {
+router.get('/homepage', withAuth, (req, res) => {
     res.render('homepage')
 });
 
@@ -51,7 +53,6 @@ router.get('/backstock/:id', async (req, res) => {
     }
     res.render('backstock')
 });
-
 
 
 module.exports = router;

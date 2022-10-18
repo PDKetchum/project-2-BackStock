@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const { Location } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // The `/api/locations` endpoint
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   // find all Locations
   try {
     const locationData = await Location.findAll({});
@@ -13,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   // find one Location by its `id` value
   try {
     const locationData = await Location.findByPk(req.params.id, {});
@@ -29,7 +30,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   // create a new Location
   try {
     const locationData = await Location.create(req.body);
@@ -39,7 +40,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   // delete a Location by its `id` value
   try {
     const locationData = await Location.destroy({
