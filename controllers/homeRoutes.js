@@ -19,37 +19,36 @@ router.get("/login", (req, res) => {
 
 router.get("/locations", withAuth, async (req, res) => {
   const locationData = await Location.findAll({ raw: true });
-  res.render("locations", { locations: locationData });
+  res.render("locations", {
+    locations: locationData,
+    logged_in: req.session.logged_in,
+  });
 });
-
-
 
 router.get("/homepage", withAuth, async (req, res) => {
-  const UserData =await User.findOne({raw: true});
-  res.render("homepage", {User: UserData});
+  const UserData = await User.findOne({ raw: true });
+  res.render("homepage", { User: UserData, logged_in: req.session.logged_in });
 });
- 
+
 router.get("/backstock/:id", withAuth, async (req, res) => {
   try {
     const driverData = await Location.findByPk(req.params.id, {
       where: {
         location_id: req.params.id,
       },
-      include: [{model: Product, attributes: ['name', 'quantity']}, User],
+      include: [{ model: Product, attributes: ["name", "quantity"] }, User],
     });
- 
 
-    const shelf=driverData.get({plain: true}); 
+    const shelf = driverData.get({ plain: true });
     if (!driverData) {
       res.status(404).json({ message: "No table found with that ID!" });
       return;
     }
     // res.status(200).json(shelf);
-    res.render("backstock", {Products: shelf});
+    res.render("backstock", { Products: shelf });
   } catch (err) {
     res.status(500).json(err);
   }
-  
 });
 
 module.exports = router;

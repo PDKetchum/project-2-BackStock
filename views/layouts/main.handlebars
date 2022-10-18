@@ -46,7 +46,7 @@
               {{! conditionally render login or logout links }}
               {{#if logged_in}}
                 {{! If logged in button redirets to landing page }}
-                <a class="nav-link" href="/landingpage">Logout</a>
+                <button class="nav-link no-button" id="logout-button">Logout</a>
               {{else}}
                 {{! If not logged in button redirets to login page }}
                 <a class="nav-link" href="/login">Login</a>
@@ -64,7 +64,7 @@
 
     {{! Added scripts  }}
     {{#if logged_in}}
-      <script src="/public/javascript/logout.js"></script>
+      <script src="/javascript/logout.js"></script>
     {{/if}}
 
     <script
