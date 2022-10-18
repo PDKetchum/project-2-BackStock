@@ -3,29 +3,18 @@
   <form class="m-4 px-3 py-5" id="loginForm">
     <div class="container">
       <h1 class="text-center pb-2">Login</h1>
-      <label>Email</label>
-      <input
-        class="form-control mb-2"
-        name="memberId"
-        type="text"
-        id="email-login"
-        autofocus
-      />
+      <label>Username</label>
+      <input class="form-control mb-2" name="memberId" type="text" autofocus />
       <label>Password</label>
-      <input
-        class="form-control mb-2"
-        name="password"
-        type="password"
-        id="password-login"
-      />
+      <input class="form-control mb-2" name="password" type="password" />
       <div class="text-center">
         {{! Send user to homepage when logged in}}
-        <a
-          href=""
+        <button
           id="login-button"
           class="btn btn-primary mt-3"
-          role="button"
-        >Log In</a>
+          type="submit"
+          form="registerForm"
+        >Login</button>
       </div>
     </div>
   </form>
