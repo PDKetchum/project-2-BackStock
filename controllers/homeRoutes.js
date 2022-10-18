@@ -24,8 +24,9 @@ router.get("/locations", withAuth, async (req, res) => {
 
 
 
-router.get("/homepage", withAuth, (req, res) => {
-  res.render("homepage");
+router.get("/homepage", withAuth, async (req, res) => {
+  const UserData =await User.findOne({raw: true});
+  res.render("homepage", {User: UserData});
 });
  
 router.get("/backstock/:id", withAuth, async (req, res) => {
