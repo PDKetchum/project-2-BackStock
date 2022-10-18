@@ -20,7 +20,12 @@
       />
       <div class="text-center">
         {{! Send user to homepage when logged in}}
-        <a href="" id="login" class="btn btn-primary mt-3" role="button">Log In</a>
+        <a
+          href=""
+          id="login-button"
+          class="btn btn-primary mt-3"
+          role="button"
+        >Log In</a>
       </div>
     </div>
   </form>
@@ -34,7 +39,7 @@
         class="form-control mb-2"
         name="user"
         type="text"
-        id="user-signup"
+        id="name-signup"
         autofocus
       />
       <label>Email</label>
@@ -55,7 +60,7 @@
       <div class="text-center">
         {{! Needs to create user when clicked }}
         <button
-          id="signup"
+          id="signup-button"
           class="btn btn-primary mt-3"
           type="submit"
           form="registerForm"
