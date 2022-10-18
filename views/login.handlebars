@@ -1,4 +1,5 @@
 <main class="container d-flex flex-wrap justify-content-center centered-form">
+<<<<<<< HEAD
   {{! Login form  }}
   <form class="m-4 px-3 py-5" id="loginForm">
     <div class="container">
@@ -29,6 +30,22 @@
       </div>
     </div>
   </form>
+=======
+    {{!-- Login form  --}}
+    <form class="m-4 px-3 py-5" id="loginForm">
+        <div class="container">
+            <h1 class="text-center pb-2">Login</h1>
+            <label>Username</label>
+            <input class="form-control mb-2" name="memberId" type="text" autofocus>
+            <label>Password</label>
+            <input class="form-control mb-2" name="password" type="password">
+            <div class="text-center">
+                {{!-- Send user to homepage when logged in--}}
+                <button id="login" class="btn btn-primary mt-3" type="submit" form="registerForm">Login</button>
+            </div>
+        </div>
+    </form>
+>>>>>>> 2e2e60dd5af6a8bb63b0e5bc8bd26cb08a71c187
 
   {{! Sign up form  }}
   <form class="m-4 px-3 py-5" id="signupForm">
