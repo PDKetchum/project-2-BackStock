@@ -1,58 +1,71 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backstock</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backstock</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<body>
-  {{!-- Navbar  --}}
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <h1 class="navbar-brand animate__animated animate__flip">BackStock</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            {{!-- Button redirects to homepage --}}
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            {{!-- conditionally render login or logout links --}}
-            {{#if logged_in}}
-            {{!-- If logged in button redirets to landing page --}}
-            <a class="nav-link" href="/landingpage">Logout</a>
-            {{else}}
-            {{!-- If not logged in button redirets to login page --}}
-            <a class="nav-link" href="/login">Login</a>
-            {{/if}}
-          </li>
-        </ul>
+  <body>
+    {{! Navbar  }}
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <h1 class="navbar-brand animate__animated animate__flip">BackStock</h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              {{! Button redirects to homepage }}
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              {{! conditionally render login or logout links }}
+              {{#if logged_in}}
+                {{! If logged in button redirets to landing page }}
+                <a class="nav-link" href="/landingpage">Logout</a>
+              {{else}}
+                {{! If not logged in button redirets to login page }}
+                <a class="nav-link" href="/login">Login</a>
+              {{/if}}
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
+    <main>
+      {{! Render the sub layout  }}
+      {{{body}}}
+    </main>
 
-  <main>
-    {{!-- Render the sub layout  --}}
-    {{{body}}}
-  </main>
+    {{! Added scripts  }}
+    {{#if logged_in}}
+      <script src="/public/javascript/logout.js"></script>
+    {{/if}}
 
-  {{!-- Added scripts  --}}
-  {{#if logged_in}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-
-  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script
+      src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </body>
 
 </html>
