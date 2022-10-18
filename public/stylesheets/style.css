@@ -36,6 +36,22 @@ h1 {
     color: var(--coffee) !important;
 }
 
+#shelf {
+    margin: auto;
+    width: 200px !important;
+    height: 200px !important;
+}
+
+#boxes {
+    margin: auto;
+    width: 200px !important;
+    height: 200px !important;
+}
+
+#images {
+    display: inline;
+}
+
 #img {
     margin: auto;
     width: 100px !important;
@@ -124,6 +140,10 @@ h1 {
     margin: 200px;
 }
 
+.layout {
+padding-top: 100px;
+padding-bottom: 50px;
+}
 
 @media only screen and (max-width: 768px) {
     .sticky {
@@ -134,4 +154,25 @@ h1 {
         margin: auto;
 
     }
+}
+
+
+@media only screen and (max-width: 576px) {
+    #shelf {
+        margin: auto;
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    #boxes {
+        margin: auto;
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .layout {
+        padding-top: 140px;
+        padding-bottom: 50px;
+        }
+        
 }

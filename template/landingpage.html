@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="../public/css/style.css">
-    <title>BackStock</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <title>BackStock</title>
 </head>
 
 <body>
@@ -34,24 +34,29 @@
     </div>
   </nav>
 
-    <main class="centered d-flex align-items-center justify-content-center">
-        <div class="custom-box text-center p-3 position-relative">
-            <div class="position-absolute top-50 start-50 translate-middle animate__animated animate__fadeInUp">
-                <h1 id="title">BackStock</h1>
-                <img src="./images/boxes-small.png">
-                <br>
+  <main class="centered d-flex align-items-center justify-content-center">
+    <div class="custom-box d-flex align-items-center justify-content-center text-center p-3">
+      <div class="layout w-100 h-100">
+        <h1 id="title" class="">BackStock</h1>
+        <br>
+        <div id="images">
+          <img id="boxes" src="../public/images/boxes-small.png">
+          <!-- <img id="shelf" src="../public/images/storage.png"> -->
+        </div>
+        <br>
+        <br>
+        <!-- Will be conditionally rendered with handlebars -->
+        <a href="./login-page.html" id="btn" class="btn btn-primary btn-custom mt-3" role="button">Log In</a>
+        <br>
+        <br>
+        <!-- <a href="./homepage.html" id="btn" class="btn btn-primary btn-custom mt-3" role="button">Begin</a> -->
+      </div>
+    </div>
+  </main>
 
-                <!-- Will be conditionally rendered with handlebars -->
-                <a href="./login-page.html" id="btn" class="btn btn-primary btn-custom mt-3" role="button">Log In</a>
-                <br>
-                <br>
-                <!-- <a href="./homepage.html" id="btn" class="btn btn-primary btn-custom mt-3" role="button">Begin</a> -->
-            </div>
-
-    </main>
-
-    <script src="../public/js/landingpage.js"></script>
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/javascript/landingpage.js"></script>
+  <script src="anime.min.js"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
