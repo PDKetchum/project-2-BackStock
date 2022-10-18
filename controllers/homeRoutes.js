@@ -26,27 +26,34 @@ router.get("/backstock", withAuth, (req, res) => {
 router.get("/homepage", withAuth, (req, res) => {
   res.render("homepage");
 });
-
-router.get("/backstock/:id", withAuth, async (req, res) => {
+//disable with auth for now 
+router.get("/backstock/:id",  async (req, res) => {
   try {
-    const driverData = await Shelf.findByPk(req.params.id, {
+    const driverData = await Location.findByPk(req.params.id, {
       where: {
         location_id: req.params.id,
       },
-      include: [Product, User],
+      include: [{model: Product, attributes: ['name', 'quantity']}, User],
     });
-    driverData.location_id;
+    // //next we need to return all items in location 
+    // const getProducts =await Product.findAll({
+    //   where: {
+    //   location_id: req.params.id,
+    //   },
+    //   include: [Product, User],
+    // })
 
+    const shelf=driverData.get({plain: true}); 
     if (!driverData) {
       res.status(404).json({ message: "No table found with that ID!" });
       return;
     }
 
-    res.status(200).json(driverData);
+    res.render("backstock", {shelf: shelf});
   } catch (err) {
     res.status(500).json(err);
   }
-  res.render("backstock");
+  
 });
 
 module.exports = router;
