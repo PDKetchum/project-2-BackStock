@@ -16,18 +16,20 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
+
 router.get("/locations", withAuth, async (req, res) => {
   const locationData = await Location.findAll({ raw: true });
   res.render("locations", { locations: locationData });
 });
-router.get("/backstock", withAuth, (req, res) => {
-  res.render("backstock");
+
+
+
+router.get("/homepage", withAuth, async (req, res) => {
+  const UserData =await User.findOne({raw: true});
+  res.render("homepage", {User: UserData});
 });
-router.get("/homepage", withAuth, (req, res) => {
-  res.render("homepage");
-});
-//disable with auth for now 
-router.get("/backstock/:id",  async (req, res) => {
+ 
+router.get("/backstock/:id", withAuth, async (req, res) => {
   try {
     const driverData = await Location.findByPk(req.params.id, {
       where: {
@@ -35,21 +37,15 @@ router.get("/backstock/:id",  async (req, res) => {
       },
       include: [{model: Product, attributes: ['name', 'quantity']}, User],
     });
-    // //next we need to return all items in location 
-    // const getProducts =await Product.findAll({
-    //   where: {
-    //   location_id: req.params.id,
-    //   },
-    //   include: [Product, User],
-    // })
+ 
 
     const shelf=driverData.get({plain: true}); 
     if (!driverData) {
       res.status(404).json({ message: "No table found with that ID!" });
       return;
     }
-
-    res.render("backstock", {shelf: shelf});
+    // res.status(200).json(shelf);
+    res.render("backstock", {Products: shelf});
   } catch (err) {
     res.status(500).json(err);
   }

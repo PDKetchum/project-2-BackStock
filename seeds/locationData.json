@@ -7,7 +7,35 @@
   {
     "id": 2,
     "stocked_by": 1
+  },
+  {
+    "id": 3,
+    "stocked_by": 1
+  },
+  {
+    "id": 4,
+    "stocked_by": 1
+  },
+  
+  {
+    "id": 5,
+    "stocked_by": 1
+  },
+  
+  {
+    "id": 6,
+    "stocked_by": 1
+  },
+  {
+    "id": 7,
+    "stocked_by": 1
+  },
+  {
+    "id": 8,
+    "stocked_by": 1
   }
+  
+
 ]
 
   
