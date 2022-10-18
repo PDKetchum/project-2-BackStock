@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/PDKetchum/project-2-BackStock#readme",
   "dependencies": {
+    "animejs": "^3.2.1",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",

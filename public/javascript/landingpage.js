@@ -1,3 +1,10 @@
+// import anime.js
+const anime = require('animejs');
+
+
+
+
+
 var btn = document.querySelector('#btn');
 
 btn.addEventListener("mouseover", (event) => {
