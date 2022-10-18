@@ -10,9 +10,9 @@
               {{!-- {{> location-details}} --}}
               <h5 class="card-title"> Location {{location.id}}</h5>
               <a
-                href="/backstock"
-                id="navigate"
-                class="btn btn-primary"
+                href="/backstock/{{location.id}}"
+                id="navigate{{location.id}}"
+                class="btn btn-primary navigate"
               >Navigate Here</a>
             </div>
           </div>
@@ -21,10 +21,10 @@
     </div>
 
     {{! Add new product to table }}
-    <div>
+    <div class="center">
       <button
         type="button"
-        class="btn btn-primary space"
+        class="btn btn-primary space "
         id="Additems"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"

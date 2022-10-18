@@ -16,6 +16,7 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
+
 router.get("/locations", withAuth, async (req, res) => {
   const locationData = await Location.findAll({ raw: true });
   res.render("locations", { locations: locationData });
@@ -26,8 +27,8 @@ router.get("/locations", withAuth, async (req, res) => {
 router.get("/homepage", withAuth, (req, res) => {
   res.render("homepage");
 });
-//disable with auth for now 
-router.get("/backstock/:id",  async (req, res) => {
+ 
+router.get("/backstock/:id", withAuth, async (req, res) => {
   try {
     const driverData = await Location.findByPk(req.params.id, {
       where: {
