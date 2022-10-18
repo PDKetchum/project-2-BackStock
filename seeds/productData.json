@@ -1,11 +1,18 @@
 [
   {
     "name": "Snickers",
-    "quantity": "3"
+    "quantity": "3",
+    "location_id": 1
 
   },
   {
     "name": "Tomatoes",
-    "quantity": "5"
+    "quantity": "5",
+    "location_id": 1
+  },
+  {
+    "name": "Grapes",
+    "quantity": "5",
+    "location_id": 1
   }
 ]
