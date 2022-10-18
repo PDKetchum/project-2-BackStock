@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const { Product, User, Location, Shelf } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // The `/api/products` endpoint
 
 // get all products
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const productData = await Product.findAll({
       // include: [
@@ -20,7 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 // get one product by id
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [
@@ -41,7 +42,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // create new product
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const productData = await Product.create(req.body);
     res.status(200).json(productData);
@@ -51,7 +52,7 @@ router.post("/", async (req, res) => {
 });
 
 // update product by id
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     let productData = await Product.findByPk(req.params.id);
 
@@ -68,7 +69,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // delete product by id
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const productData = await Product.destroy({
       where: {

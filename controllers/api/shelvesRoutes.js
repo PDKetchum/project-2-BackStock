@@ -1,7 +1,8 @@
 const { Shelf, Location, Product } = require("../../models");
 const router = require("express").Router();
+const withAuth = require("../../utils/auth");
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   // find one Location by its `id` value
   try {
     const locationData = await Location.findByPk(req.params.id, {
