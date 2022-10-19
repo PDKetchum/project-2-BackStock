@@ -1,15 +1,28 @@
 <main class="container d-flex flex-wrap justify-content-center centered-form">
+<<<<<<< HEAD
   {{! Login form  }}
   <form class="m-4 px-3 py-5" id="loginForm">
     <div class="container">
       <h1 class="text-center pb-2">Login</h1>
       <label>Email</label>
-      <input class="form-control mb-2" name="memberId" type="text" autofocus id="email-login"/>
+      <input
+        class="form-control mb-2"
+        name="memberId"
+        type="text"
+        id="email-login"
+        autofocus
+      />
       <label>Password</label>
-      <input class="form-control mb-2" name="password" type="password" id="password-login"/>
+      <input
+        class="form-control mb-2"
+        name="password"
+        type="password"
+        id="password-login"
+      />
       <div class="text-center">
         {{! Send user to homepage when logged in}}
-        <button
+        <a
+          href=""
           id="login-button"
           class="btn btn-primary mt-3"
           role="button"
@@ -17,6 +30,22 @@
       </div>
     </div>
   </form>
+=======
+    {{!-- Login form  --}}
+    <form class="m-4 px-3 py-5" id="loginForm">
+        <div class="container">
+            <h1 class="text-center pb-2">Login</h1>
+            <label>Username</label>
+            <input class="form-control mb-2" name="memberId" type="text" autofocus>
+            <label>Password</label>
+            <input class="form-control mb-2" name="password" type="password">
+            <div class="text-center">
+                {{!-- Send user to homepage when logged in--}}
+                <button id="login" class="btn btn-primary mt-3" type="submit" form="registerForm">Login</button>
+            </div>
+        </div>
+    </form>
+>>>>>>> 2e2e60dd5af6a8bb63b0e5bc8bd26cb08a71c187
 
   {{! Sign up form  }}
   <form class="m-4 px-3 py-5" id="signupForm">
@@ -43,7 +72,7 @@
         class="form-control mb-2"
         name="password"
         type="password"
-        id="password-signup"
+        id="user-password"
       />
       <div class="text-center">
         {{! Needs to create user when clicked }}
@@ -58,6 +87,6 @@
   </form>
 
 </main>
-{{!login}}
+
 <script src="/javascript/login-page.js"></script>
 <script src="/javascript/login.js"></script>

@@ -1,6 +1,5 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
-  console.log("login handler");
 
   // Collect values from the login form
   const email = document.querySelector("#email-login").value.trim();
@@ -8,9 +7,9 @@ const loginFormHandler = async (event) => {
 
   if (email && password) {
     // Send a POST request to the API endpoint
-    const response = await fetch("/api/user/login", {
+    const response = await fetch("/api/users/login", {
       method: "POST",
-      body: JSON.stringify({ email: email, password: password }),
+      body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -31,9 +30,9 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
 
   if (name && email && password) {
-    const response = await fetch("/api/user", {
+    const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ name: name, email: email, password: password }),
+      body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -47,8 +46,8 @@ const signupFormHandler = async (event) => {
 
 document
   .querySelector("#login-button")
-  .addEventListener("click", loginFormHandler);
+  .addEventListener("submit", loginFormHandler);
 
 document
   .querySelector("#signup-button")
-  .addEventListener("click", signupFormHandler);
+  .addEventListener("submit", signupFormHandler);

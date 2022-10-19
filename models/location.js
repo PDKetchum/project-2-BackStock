@@ -12,14 +12,6 @@ Location.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    stocked_by: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "User",
-        key: "id",
-      },
-    }
   },
   {
     sequelize,

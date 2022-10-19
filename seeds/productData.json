@@ -1,44 +1,11 @@
 [
   {
     "name": "Snickers",
-    "quantity": "3",
-    "location_id": 1
+    "quantity": "3"
 
   },
   {
     "name": "Tomatoes",
-    "quantity": "5",
-    "location_id": 2
-  },
-  {
-    "name": "Grapes",
-    "quantity": "5",
-    "location_id": 1
-  },
-  {
-    "name": "Apples",
-    "quantity": "5",
-    "location_id": 3
-  },
-  {
-    "name": "Bananas",
-    "quantity": "5",
-    "location_id": 5
-  },
-  {
-    "name": "Milk",
-    "quantity": "5",
-    "location_id": 6
-  },
-  {
-    "name": "Grapes",
-    "quantity": "5",
-    "location_id": 1
-  },
-  {
-    "name": "Corn",
-    "quantity": "5",
-    "location_id": 4
+    "quantity": "5"
   }
-
 ]

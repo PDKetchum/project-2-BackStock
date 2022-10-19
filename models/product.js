@@ -21,16 +21,7 @@ Product.init(
     quantity: {
       type: DataTypes.INTEGER,
     },
-    location_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "Location",
-        key: "id",
-      },
-    },
   },
-  
   {
     sequelize,
     timestamps: false,
@@ -38,7 +29,6 @@ Product.init(
     underscored: true,
     modelName: "Product",
   }
-  
 );
 
 module.exports = Product;
