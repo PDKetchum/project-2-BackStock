@@ -1,6 +1,5 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
-  console.log("login handler");
 
   // Collect values from the login form
   const email = document.querySelector("#email-login").value.trim();
@@ -26,11 +25,13 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
+  // Collect values from the signup form
   const name = document.querySelector("#name-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
   if (name && email && password) {
+    // Send a POST request to the API endpoint/create a user
     const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({ name: name, email: email, password: password }),
@@ -38,6 +39,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      // If successful, redirect the browser to the profile page
       document.location.replace("/homepage");
     } else {
       alert(response.statusText);
@@ -45,6 +47,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
+// Event listeners for buttons
 document
   .querySelector("#login-button")
   .addEventListener("click", loginFormHandler);

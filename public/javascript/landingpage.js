@@ -20,7 +20,7 @@ window.addEventListener("load", (event) => {
   document.querySelector('#boxes').addEventListener("mouseover", animation.restart)
 })
 
-var btn = document.querySelector("##login-btn");
+var btn = document.querySelector("#login-btn");
 
 // Add animate.css class to login button
 btn.addEventListener("mouseover", (event) => {
