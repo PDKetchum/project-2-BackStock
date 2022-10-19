@@ -36,17 +36,11 @@ h1 {
     color: var(--coffee) !important;
 }
 
-#shelf {
+#box {
     margin: auto;
-    width: 200px !important;
-    height: 200px !important;
+    width: 100px !important;
+    height: 100px !important;
 }
-
-/* #boxes {
-    margin: auto;
-    width: 200px !important;
-    height: 200px !important;
-} */
 
 #images {
     display: inline;
@@ -174,5 +168,4 @@ padding-bottom: 50px;
         padding-top: 140px;
         padding-bottom: 50px;
         }
-        
 }
