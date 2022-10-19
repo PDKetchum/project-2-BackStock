@@ -9,14 +9,17 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Backstock item:</h1>
+         
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body mx-auto">
+           <form class="AddProduct">
           <input type="text" id="ProductName" placeholder="Product Name"><br><br>
           <input type="number" id="Amount" value="1"><br><br>
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-primary addPro" >Add</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
 
         </div>
@@ -63,4 +66,4 @@
       </div>
     </div>
 
-        <script src="/javascript/BackstockLocation.js"></script>
+        <script src="/javascript/backstock.js"></script>
