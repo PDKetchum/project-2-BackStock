@@ -26,8 +26,10 @@ router.get("/locations", withAuth, async (req, res) => {
 });
 
 router.get("/homepage", withAuth, async (req, res) => {
-  const UserData = await User.findOne({ raw: true });
-  res.render("homepage", { User: UserData, logged_in: req.session.logged_in });
+  res.render("homepage", {
+    userName: req.session.user_name,
+    logged_in: req.session.logged_in,
+  });
 });
 
 router.get("/backstock/:id", withAuth, async (req, res) => {
@@ -45,7 +47,10 @@ router.get("/backstock/:id", withAuth, async (req, res) => {
       return;
     }
     // res.status(200).json(shelf);
-    res.render("backstock", { Products: shelf });
+    res.render("backstock", {
+      Products: shelf,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
