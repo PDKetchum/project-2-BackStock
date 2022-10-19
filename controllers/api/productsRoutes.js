@@ -42,9 +42,10 @@ router.get("/:id", withAuth, async (req, res) => {
 });
 
 // create new product
-router.post("/", withAuth, async (req, res) => {
+router.post("/",  async (req, res) => {
   try {
     const productData = await Product.create(req.body);
+    
     res.status(200).json(productData);
   } catch (err) {
     res.status(400).json(err);
