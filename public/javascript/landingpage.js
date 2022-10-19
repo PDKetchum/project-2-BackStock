@@ -1,7 +1,7 @@
 // import anime.js
 // const anime = require('animejs');
 
-var btn = document.querySelector("#btn");
+var btn = document.querySelector("#login-btn");
 
 btn.addEventListener("mouseover", (event) => {
   function delay(time) {
