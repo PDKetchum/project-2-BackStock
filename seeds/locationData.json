@@ -1,28 +1,42 @@
 [
   {
-    "id": 1
+    "id": 1,
+    "stocked_by": 1
+
   },
   {
-    "id": 2
+    "id": 2,
+    "stocked_by": 1
   },
   {
-    "id": 3
+    "id": 3,
+    "stocked_by": 1
   },
   {
-     "id": 4
+    "id": 4,
+    "stocked_by": 1
+  },
+  
+  {
+    "id": 5,
+    "stocked_by": 1
+  },
+  
+  {
+    "id": 6,
+    "stocked_by": 1
   },
   {
-    "id": 5
+    "id": 7,
+    "stocked_by": 1
   },
   {
-    "id": 6
-  },
-  {
-    "id": 7
-  },
-  {
-    "id": 8
+    "id": 8,
+    "stocked_by": 1
   }
+  
+
+]
 
   
-]
+
