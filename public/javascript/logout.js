@@ -1,3 +1,4 @@
+// Logs user out with POST logout route
 const logout = async () => {
   const response = await fetch("/api/user/logout", {
     method: "POST",

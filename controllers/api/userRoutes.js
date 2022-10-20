@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  // find all Users
+  // Create a user
   try {
     const userData = await User.create(req.body);
     req.session.save(() => {
