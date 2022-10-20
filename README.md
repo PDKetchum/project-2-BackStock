@@ -32,7 +32,7 @@ In terminal
 
 GitHub URL: https://github.com/PDKetchum/project-2-BackStock
 
-Heroku URL:
+Heroku URL: https://backstock-23.herokuapp.com/
 
 ## License
 
