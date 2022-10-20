@@ -5,13 +5,14 @@ const sequelize = require("../config/connection");
 class Location extends Model {}
 Location.init(
   {
-    //each  location needs an id for seperate shelfs
+    // Location needs an id
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
+    // Locations needs a stocked_by
     stocked_by: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -19,7 +20,7 @@ Location.init(
         model: "User",
         key: "id",
       },
-    }
+    },
   },
   {
     sequelize,

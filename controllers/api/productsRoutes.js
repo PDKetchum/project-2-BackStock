@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Product, User, Location, Shelf } = require("../../models");
+const { Product, User, Location } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // The `/api/products` endpoint
@@ -7,12 +7,7 @@ const withAuth = require("../../utils/auth");
 // get all products
 router.get("/", withAuth, async (req, res) => {
   try {
-    const productData = await Product.findAll({
-      // include: [
-      //   { model: User, through: Shelf, attributes: ["name"] },
-      //   { model: Location, through: Shelf, attributes: ["id"] },
-      // ],
-    });
+    const productData = await Product.findAll({});
     res.status(200).json(productData);
   } catch (err) {
     console.log(err);
@@ -42,10 +37,10 @@ router.get("/:id", withAuth, async (req, res) => {
 });
 
 // create new product
-router.post("/",  async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const productData = await Product.create(req.body);
-    
+
     res.status(200).json(productData);
   } catch (err) {
     res.status(400).json(err);

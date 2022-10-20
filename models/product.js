@@ -5,22 +5,23 @@ class Product extends Model {}
 
 Product.init(
   {
-    // product needs unique id
+    // Product needs unique id
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    //product needs a name
+    // Product needs a name
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    //product needs a quantity amount
+    // Product needs a quantity amount
     quantity: {
       type: DataTypes.INTEGER,
     },
+    // Product needs a location_id
     location_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -30,7 +31,7 @@ Product.init(
       },
     },
   },
-  
+
   {
     sequelize,
     timestamps: false,
@@ -38,7 +39,6 @@ Product.init(
     underscored: true,
     modelName: "Product",
   }
-  
 );
 
 module.exports = Product;
